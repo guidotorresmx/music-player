@@ -9,55 +9,52 @@ body {
     background-color: #eee;
 }
 
-.Landing {
+.landing {
     display: grid;
     width: 100%;
     height: 100%;
-    grid-template-areas: "drop genre menus" "title title title" "prog prog prog" "controls controls controls" "player player player";
-    grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     justify-content: center;
     align-content: center;
     justify-items: center;
     align-items: center;
 }
 
-.Drop {
-    grid-area: drop;
+.nav-handler {
+    grid-area: nav-handler;
     border: 1px solid black;
 }
 
-.Genre {
+.genre {
     grid-area: genre;
     border: 1px solid black;
 }
 
-.Menu {
-    grid-area: menus;
+.sidebar-handler {
+    grid-area: sidebar-handler;
     border: 1px solid black;
 }
 
-.Title {
+.title {
     grid-area: title;
     border: 1px solid black;
 }
 
-.Progress {
+.progress {
     grid-area: prog;
     border: 1px solid black;
 }
 
-.Controls {
+.controls {
     grid-area: controls;
     border: 1px solid black;
 }
 
-.Player {
+.player {
     grid-area: player;
     border: 1px solid black;
 }
 
-.Playlist {
+.playlist {
     grid-area: playlist;
     border: 1px solid black;
 }
