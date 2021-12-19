@@ -20,6 +20,18 @@
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
         background-color: red;
     }
+    .sidebar-icon {
+        display: none;
+    }
+    .sidebar-complete {
+        display: inherit;
+    }
+    .nav-icon {
+        display: none;
+    }
+    .nav-complete {
+        display: inherit;
+    }
 }
 
 @media (max-device-aspect-ratio: 10/16) {
@@ -36,16 +48,13 @@
         display: none;
     }
     .sidebar-icon {
-        display: inherit;
+        display: inline;
     }
     .nav-complete {
         display: none;
     }
     .nav-icon {
-        display: inherit;
-    }
-    .playlist {
-        display: none;
+        display: inline;
     }
 }
 
@@ -55,5 +64,8 @@
         grid-template-columns: 1fr 4fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
         background-color: green;
+    }
+    .playlist {
+        display: none;
     }
 }
