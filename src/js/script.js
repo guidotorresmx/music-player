@@ -24,10 +24,10 @@ playingIndex = 0
 const song = new Audio()
 
 window.addEventListener(`load`, () => {
-            song.src = playlist[playingIndex]
-            playlist.forEach(
-                function(item, index) {
-                    playlistEle.innerHTML +=
-                        `<li class="playlist-element" data-index="${index}">${item.innerHTML}</li>`
-                }
-            )
+    song.src = playlist[playingIndex]
+    playlist.forEach(
+        function(item, index) {
+            playlistEle.innerHTML +=
+                `<li class="playlist-element" data-index="${index}">${item.innerHTML}</li>`
+        })
+})
