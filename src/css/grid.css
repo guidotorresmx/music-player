@@ -1,3 +1,11 @@
+:root {
+    --bg-light: rgba(80, 115, 107, 1);
+    --bg-dark: rgba(36, 51, 49, 1);
+    --fg: rgb(235, 190, 139);
+    --fg-dark: rgba(173, 156, 143, .6);
+    --fg-light: rgb(255, 255, 255);
+}
+
 #wrapper {
     position: fixed;
     top: 0;
@@ -7,7 +15,7 @@
     background: #eee;
     /*for gradients and swatches, go to: https://cssgradient.io/ */
     background: rgb(80, 115, 107);
-    background: linear-gradient(180deg, rgba(80, 115, 107, 1) 0%, rgba(36, 51, 49, 1) 100%);
+    background: linear-gradient(180deg, var(--bg-light) 0%, var(--bg-dark) 100%);
 }
 
 .landing {
