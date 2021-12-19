@@ -1,9 +1,9 @@
 /*#TODO: change central columns size to 80% */
 
 .landing {
-    grid-template-areas: "nav-handler genre sidebar-handler" "title title title" "prog prog prog" "controls controls controls" "player player player";
-    grid-template-columns: 3fr 4fr 3fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "nav-handler playlist playlist sidebar-handler" "nav-handler genre genre sidebar-handler" "nav-handler title title sidebar-handler" "nav-handler prog prog sidebar-handler" "nav-handler controls player sidebar-handler" "footer footer footer footer";
+    grid-template-columns: 3fr 2fr 2fr 3fr;
+    grid-template-rows: 5fr 1fr 1fr 1fr 1fr .5fr;
     background-color: #777;
 }
 
@@ -17,13 +17,10 @@
 
 @media (max-device-aspect-ratio: 16/16) {
     .landing {
-        grid-template-areas: "nav-handler genre sidebar-handler" "title title title" "prog prog prog" "controls controls controls" "player player player";
-        grid-template-columns: 1fr 3fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: "nav-handler playlist sidebar-handler" "genre genre genre" "title title title" "prog prog prog" "controls controls controls" "player player player" "footer footer footer";
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-rows: 5fr .5fr 1fr 1fr 1fr 1fr .5fr;
         background-color: purple;
-    }
-    .footer {
-        display: none;
     }
     .sidebar-complete {
         display: none;
