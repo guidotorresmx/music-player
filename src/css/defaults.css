@@ -1,0 +1,12 @@
+* {
+    box-sizing: border-box;
+    border: 2px solid #000;
+}
+
+html,
+body {
+    border: 2px solid #000;
+    background-color: #eee;
+    height: 100vh;
+    width: 100vw;
+}
