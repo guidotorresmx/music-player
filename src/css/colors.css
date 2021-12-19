@@ -1,0 +1,7 @@
+:root {
+    --bg-light: rgba(80, 115, 107, 1);
+    --bg-dark: rgba(36, 51, 49, 1);
+    --fg: rgb(235, 190, 139);
+    --fg-dark: rgba(173, 156, 143, .6);
+    --fg-light: rgb(255, 255, 255);
+}
