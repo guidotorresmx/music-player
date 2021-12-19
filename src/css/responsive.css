@@ -18,7 +18,7 @@
     .landing {
         grid-template-areas: "nav-handler playlist playlist sidebar-handler" "genre genre genre genre" "title title title title" "prog prog prog prog" "controls controls player player" "footer footer footer footer";
         grid-template-columns: 1fr 2fr 2fr 1fr;
-        grid-template-rows: 5fr .5fr 1fr 1fr 1fr 1fr .5fr;
+        grid-template-rows: 5fr .25fr 1fr 1fr 1fr 1fr .5fr;
     }
     .sidebar-complete {
         display: none;
