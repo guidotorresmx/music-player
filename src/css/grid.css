@@ -4,6 +4,10 @@
     left: 0;
     bottom: 0;
     right: 0;
+    background: #eee;
+    /*for gradients and swatches, go to: https://cssgradient.io/ */
+    background: rgb(80, 115, 107);
+    background: linear-gradient(180deg, rgba(80, 115, 107, 1) 0%, rgba(36, 51, 49, 1) 100%);
 }
 
 .landing {
