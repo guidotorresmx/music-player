@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../css/landing.css">
-    <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/grid.css">
     <link rel="stylesheet" href="../css/colors.css">
+    <link rel="stylesheet" href="../css/element-styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
     <script src="../js/script.js" type="module" defer></script>
     <title>Landing</title>
 </head>
@@ -56,23 +57,26 @@
                 </ul>
             </section>
             <section class="genre">
-                <h1>Genre</h1>
+                <h1 id="genre">Genre</h1>
             </section>
             <section class="title">
-                <h1>Song</h1>
-                <h2>Band</h2>
+                <h1 id="song">Song</h1>
+                <h2 id="band">Band</h2>
             </section>
             <section class="progress">
-                <span class="material-icons">library_music</span>
-                <h1>... ... ... ...</h1>
+                <h3>00:01 | 02:32</h3>
+                <img id="song-cover" src="../assets/img/music-cover-placeholder.jpg" alt="album cover">
+                <h1 id="progress-bar">... ... ... ...</h1>
             </section>
             <section class="controls">
-                <span class="material-icons">remove_circle_outline</span>
-                <span class="material-icons">skip_previous</span>
-                <span class="material-icons">play_arrow</span>
-                <span class="material-icons">skip_next</span>
-                <span class="material-icons">favorite</span>
-                <span class="material-icons">favorite_border</span>
+                <span id="remove-empty" class="material-icons">remove_circle_outline</span>
+                <span id="remove" class="material-icons">remove_circle</span>
+                <span id="skip-prev" class="material-icons">skip_previous</span>
+                <span id="play" class="material-icons">play_arrow</span>
+                <span id="pause" class="material-icons">pause</span>
+                <span id="skip-next" class="material-icons">skip_next</span>
+                <span id="fav-empty" class="material-icons">favorite_border</span>
+                <span id="fav" class="material-icons">favorite</span>
             </section>
             <section class="player">
                 <span class="material-icons">shuffle</span>

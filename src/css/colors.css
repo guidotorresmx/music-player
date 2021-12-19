@@ -5,3 +5,13 @@
     --fg-dark: rgba(173, 156, 143, .6);
     --fg-light: rgb(255, 255, 255);
 }
+
+.genre {
+    color: var(--fg-dark);
+    size: 1rem;
+}
+
+.song {
+    color: var(--fg-dark);
+    size: 1rem;
+}
