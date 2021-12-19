@@ -4,4 +4,5 @@
     --fg: rgb(235, 190, 139);
     --fg-dark: rgba(173, 156, 143, .6);
     --fg-light: rgb(255, 255, 255);
+    --border-color: rgba(0, 0, 0, .3);
 }
