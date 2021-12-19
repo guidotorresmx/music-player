@@ -38,7 +38,7 @@
     .landing {
         grid-template-areas: "nav-handler genre sidebar-handler" "title title title" "prog prog prog" "controls controls controls" "player player player";
         grid-template-columns: 1fr 4fr 1fr;
-        grid-template-rows: 1fr 1fr 4fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 6fr 1fr 1fr;
     }
     .playlist {
         display: none;

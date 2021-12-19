@@ -18,7 +18,6 @@
 
 .nav-handler {
     grid-area: nav-handler;
-    border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,7 +25,6 @@
 
 .sidebar-handler {
     grid-area: sidebar-handler;
-    border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,7 +32,6 @@
 
 .playlist {
     grid-area: playlist;
-    border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,7 +39,6 @@
 
 .genre {
     grid-area: genre;
-    border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,7 +46,6 @@
 
 .title {
     grid-area: title;
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,7 +54,6 @@
 
 .progress {
     grid-area: prog;
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -68,7 +62,6 @@
 
 .controls {
     grid-area: controls;
-    border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,7 +69,6 @@
 
 .player {
     grid-area: player;
-    border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -84,7 +76,6 @@
 
 .footer {
     grid-area: footer;
-    border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: right;

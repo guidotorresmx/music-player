@@ -1,10 +1,8 @@
 * {
     box-sizing: border-box;
-    border: 2px solid #000;
 }
 
 html,
 body {
-    border: 2px solid #000;
     background-color: #eee;
 }
