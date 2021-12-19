@@ -14,7 +14,7 @@
     display: none;
 }
 
-@media (max-device-aspect-ratio: 16/16) {
+@media (max-device-aspect-ratio: 10/7) {
     .landing {
         grid-template-areas: "nav-handler playlist playlist sidebar-handler" "genre genre genre genre" "title title title title" "prog prog prog prog" "controls controls player player" "footer footer footer footer";
         grid-template-columns: 1fr 2fr 2fr 1fr;

@@ -35,16 +35,19 @@
 
 /* -------------------------------- */
 
-.playlist-complete {
+.playlist-complete,
+.nav-list,
+.sidebar-list {
     list-style: none;
     margin: 0;
     padding: 0;
-    border-bottom: .15rem solid var(--border-color);
     width: 20em;
-    overflow: hidden;
+    overflow: auto;
 }
 
-.playlist-complete .playlist-element {
+.playlist-complete .playlist-element,
+.nav-list .nav-element,
+.sidebar-list .sidebar-element {
     border-top: .15rem solid var(--border-color);
     padding: .5em;
     display: flex;
@@ -56,6 +59,11 @@
     border-top: 0;
 }
 
+.nav-list:last-child,
+.sidebar-list:last-child {
+    border-bottom: .15rem solid var(--border-color);
+}
+
 .playlist-song-duration {
     background-color: var(--fg-dark);
     font-size: 80%;
@@ -63,6 +71,20 @@
     min-width: 1.5em;
     padding: .25em;
     text-align: center
+}
+
+.sidebar-list>.sidebar-element {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin: auto;
+}
+
+.nav-list>.nav-element {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: auto;
 }
 
 
