@@ -7,6 +7,7 @@ const play = $(`#play`)
 const pause = $(`#pause`)
 const playPrev = $(`#skip-prev`)
 const playNext = $(`#skip-next`)
+const playlistEle = $(`.playlist`)
 
 // |---progress
 const currentTime = $(`#progress-time`)
@@ -21,3 +22,12 @@ const playlist = [
 
 playingIndex = 0
 const song = new Audio()
+
+window.addEventListener(`load`, () => {
+            song.src = playlist[playingIndex]
+            playlist.forEach(
+                function(item, index) {
+                    playlistEle.innerHTML +=
+                        `<li class="playlist-element" data-index="${index}">${item.innerHTML}</li>`
+                }
+            )
