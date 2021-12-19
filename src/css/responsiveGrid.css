@@ -1,40 +1,21 @@
-@media (max-device-aspect-ratio: 16/1) {
-    .landing {
-        grid-template-areas: "nav-handler genre sidebar-handler" "title title title" "prog prog prog" "controls controls controls" "player player player";
-        grid-template-columns: 3fr 4fr 3fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-        background-color: #777;
-    }
-    .sidebar-icon {
-        display: none;
-    }
-    .nav-icon {
-        display: none;
-    }
+/*#TODO: change central columns size to 80% */
+
+.landing {
+    grid-template-areas: "nav-handler genre sidebar-handler" "title title title" "prog prog prog" "controls controls controls" "player player player";
+    grid-template-columns: 3fr 4fr 3fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    background-color: #777;
 }
 
-@media (max-device-aspect-ratio: 16/10) {
-    .landing {
-        grid-template-areas: "nav-handler genre sidebar-handler" "title title title" "prog prog prog" "controls controls controls" "player player player";
-        grid-template-columns: 3fr 4fr 3fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-        background-color: red;
-    }
-    .sidebar-icon {
-        display: none;
-    }
-    .sidebar-complete {
-        display: inherit;
-    }
-    .nav-icon {
-        display: none;
-    }
-    .nav-complete {
-        display: inherit;
-    }
+.sidebar-icon {
+    display: none;
 }
 
-@media (max-device-aspect-ratio: 10/16) {
+.nav-icon {
+    display: none;
+}
+
+@media (max-device-aspect-ratio: 16/16) {
     .landing {
         grid-template-areas: "nav-handler genre sidebar-handler" "title title title" "prog prog prog" "controls controls controls" "player player player";
         grid-template-columns: 1fr 3fr 1fr;
