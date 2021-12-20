@@ -16,11 +16,14 @@ const fav = $(`#btn-fav`)
 const currentTime = $(`#progress-time`)
 const totalTime = $(`#total-time`)
 const progressBar = $(`#progress-bar`)
-const trackVolume = $(`#volume-bar`)
+const muteBtn = $(`#btn-mute`)
+const shuffleBtn = $(`#btn-shuffle`)
+const resetBtn = $(`#btn-playlist-reset`)
 
 // Script level variables
 let playingIndex = 0;
 const song = new Audio();
+let isDragging = false;
 
 
 //function
@@ -54,6 +57,17 @@ window.addEventListener(`load`, function() {
 
     loadPlaylistFromArray(playlist)
     loadSongFromPlaylistById(playingIndex)
+
+    muteBtn.addEventListener(`click`, function(event) {
+        if (muteBtn.textContent.includes(`volume_up`)) {
+            muteBtn.innerHTML = `<span id="mute" class="material-icons">volume_off</span>`;
+            setVolume(0.0)
+        } else {
+            muteBtn.innerHTML = `<span id="mute" class="material-icons">volume_up</span>`;
+            setVolume(1.0)
+        }
+    })
+
 
     playOrPause.addEventListener(`click`, function(event) {
         if (playOrPause.textContent.includes(`play`)) {
@@ -110,8 +124,6 @@ window.addEventListener(`load`, function() {
         progressBar.value = (song.currentTime / song.duration) * 100;
     })
 
-
-    let isDragging = false;
     progressBar.addEventListener(`input`, function(event) {
         isDragging = true;
     })
@@ -119,10 +131,4 @@ window.addEventListener(`load`, function() {
         isDragging = false;
         song.currentTime = (progressBar.value / 100) * song.duration;
     })
-
-    trackVolume.addEventListener(`input`, function(event) {
-        setVolume(trackVolume.value)
-    })
-
-    setVolume(trackVolume.value)
 })
