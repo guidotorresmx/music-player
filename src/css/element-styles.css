@@ -1,3 +1,11 @@
+button {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #song-cover {
     max-width: 20vh;
     max-height: 20vh;
@@ -96,47 +104,47 @@
 
 /* -------------------------------- */
 
-.controls>#remove-empty {
-    display: none;
+#remove-empty {
+    font-size: 1.15em;
+    color: var(--fg-light);
+    margin-right: .5em;
+}
+
+#remove-empty #remove {
     font-size: 1.15em;
     color: var(--fg-dark);
     margin-right: .5em;
 }
 
-.controls>#remove {
-    font-size: 1.15em;
-    color: var(--fg-light);
-    margin-right: .5em;
-}
-
-.controls>#skip-prev {
+#skip-prev {
     font-size: 2.5em;
     color: var(--fg-light);
 }
 
-.controls>#skip-next {
+#skip-next {
     font-size: 2.5em;
     color: var(--fg-light);
 }
 
-.controls>#play {
-    font-size: 3.5em;
+#play {
+    font-size: 3.6em;
+    width: 4rem;
     color: var(--fg-light);
 }
 
-.controls>#pause {
-    display: none;
+#pause {
     font-size: 3.5em;
+    width: 4rem;
     color: var(--fg-light);
 }
 
-.controls>#fav {
+#fav {
     font-size: 1.15em;
     color: var(--fg);
     margin-left: .5em;
 }
 
-.controls>#fav-empty {
+#fav-empty {
     display: none;
     font-size: 1.15em;
     color: var(--fg-light);
@@ -152,36 +160,52 @@
 
 /* -------------------------------- */
 
-.player>#shuffle {
+#shuffle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.75em;
     color: var(--fg-light);
     margin-right: .5em;
 }
 
-.player>#playlist-play {
+#playlist-play {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 2.25em;
     color: var(--fg-light);
     margin-right: .5em;
 }
 
-.player>#mute {
-    font-size: 2em;
+#mute {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
     color: var(--fg-light);
-    margin-right: .5em;
 }
 
-.player>#unmute {
+#unmute {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     display: none;
     font-size: 2em;
     color: var(--fg-light);
-    margin-right: .5em;
 }
 
-.player>#autorenew {
+#autorenew {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.75em;
     color: var(--fg-light);
 }
 
 .playing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: tomato;
 }

@@ -66,11 +66,9 @@ window.addEventListener(`load`, function() {
     })
 
     remove.addEventListener(`click`, function(event) {
-        if (!remove.textContent.includes(`outline`)) {
-            remove.innerHTML = `<span id="remove" class="material-icons">remove_circle_outline</span>`;
-        } else {
-            remove.innerHTML = `<span id="remove" class="material-icons">remove_circle</span>`;
-        }
+        playlist.splice(playingIndex, 1)
+        loadPlaylistFromArray(playlist)
+        loadSongFromPlaylistById(playingIndex, true)
     })
 
     fav.addEventListener(`click`, function(event) {
