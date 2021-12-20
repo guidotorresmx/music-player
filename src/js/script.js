@@ -85,6 +85,19 @@ window.addEventListener(`load`, function() {
         }
     })
 
+
+    song.addEventListener(`durationchange`, function() {
+        totalTime.textContent = formatTime(song.duration);
+    })
+
+    song.addEventListener(`timeupdate`, function() {
+        currentTime.textContent = formatTime(song.currentTime);
+        console.log(song.currentTime, song.duration)
+        if (Number.isNaN(song.duration)) return
+        progressBar.value = (song.currentTime / song.duration) * 100;
+    })
+
+
     trackVolume.addEventListener(`input`, function(event) {
         setVolume(trackVolume.value)
     })
