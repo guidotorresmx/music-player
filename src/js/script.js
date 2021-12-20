@@ -98,6 +98,15 @@ window.addEventListener(`load`, function() {
     })
 
 
+    let isDragging = false;
+    progressBar.addEventListener(`input`, function(event) {
+        isDragging = true;
+    })
+    progressBar.addEventListener(`change`, function(event) {
+        isDragging = false;
+        song.currentTime = (progressBar.value / 100) * song.duration;
+    })
+
     trackVolume.addEventListener(`input`, function(event) {
         setVolume(trackVolume.value)
     })
