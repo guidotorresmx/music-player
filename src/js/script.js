@@ -14,7 +14,8 @@ const playlistEle = $(`.playlist`)
 // |---progress
 const currentTime = $(`#progress-time`)
 const totalTime = $(`#total-time`)
-
+const progressBar = $(`#progress-bar`)
+const trackVolume = $(`#volume-bar`)
 
 // Script level variables
 let playingIndex = 0;
@@ -40,6 +41,11 @@ const loadPlaylistFromArray = function(playlist) {
             playlistEle.innerHTML +=
                 `<li class="playlist-element" data-index="${index}">${item.innerHTML}</li>`
         })
+}
+
+
+const setVolume = function(volume) {
+    song.volume = volume;
 }
 
 //app core
@@ -79,4 +85,9 @@ window.addEventListener(`load`, function() {
         }
     })
 
+    trackVolume.addEventListener(`input`, function(event) {
+        setVolume(trackVolume.value)
+    })
+
+    setVolume(trackVolume.value)
 })
