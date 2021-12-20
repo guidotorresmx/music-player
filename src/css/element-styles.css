@@ -181,3 +181,7 @@
     font-size: 1.75em;
     color: var(--fg-light);
 }
+
+.playing {
+    background-color: tomato;
+}

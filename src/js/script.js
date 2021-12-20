@@ -22,22 +22,32 @@ const song = new Audio();
 
 
 //function
-const loadSongFromPlaylistById = function(id) {
+const loadSongFromPlaylistById = function(id, start = false) {
     playingIndex = id;
     let playing = !song.paused
     song.src = playlist[playingIndex];
-    if (playing)
+
+    $$(`.playing`).forEach(li => li.classList.remove(`playing`));
+    $(`[data-index="${playingIndex}"]`).classList.add(`playing`);
+    if (playing || start)
         song.play();
 }
 
-//app core
-window.addEventListener(`load`, function() {
-    song.src = playlist[playingIndex]
+const loadPlaylistFromArray = function(playlist) {
+    playlistEle.innerHTML = ``
     playlist.forEach(
         function(item, index) {
             playlistEle.innerHTML +=
                 `<li class="playlist-element" data-index="${index}">${item.innerHTML}</li>`
         })
+}
+
+//app core
+window.addEventListener(`load`, function() {
+
+    loadPlaylistFromArray(playlist)
+    loadSongFromPlaylistById(playingIndex)
+
     play.addEventListener(`click`, function(event) {
         song.play()
         pause.classList.remove(`hidden`)
@@ -65,8 +75,7 @@ window.addEventListener(`load`, function() {
         const songToPlay = event.target
         if (songToPlay.matches(`li`)) {
             playingIndex = Number(songToPlay.dataset.index)
-            song.src = playlist[playingIndex]
-            song.play()
+            loadSongFromPlaylistById(playingIndex, true)
         }
     })
 
