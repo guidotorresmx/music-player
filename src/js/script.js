@@ -27,20 +27,21 @@ window.addEventListener(`load`, function() {
             playlistEle.innerHTML +=
                 `<li class="playlist-element" data-index="${index}">${item.innerHTML}</li>`
         })
+    play.addEventListener(`click`, function(event) {
+        song.play()
+        pause.classList.remove(`hidden`)
+        play.classList.add(`hidden`)
+    })
+
+    pause.addEventListener(`click`, function(event) {
+        song.pause()
+        play.classList.remove(`hidden`)
+        pause.classList.add(`hidden`)
+
+    })
+
 })
 
-play.addEventListener(`click`, function(event) {
-    song.play()
-    pause.classList.remove(`hidden`)
-    play.classList.add(`hidden`)
-})
-
-pause.addEventListener(`click`, function(event) {
-    song.pause()
-    play.classList.remove(`hidden`)
-    pause.classList.add(`hidden`)
-
-})
 
 playNext.addEventListener(`click`, function(event) {
     const nextIndex = (playingIndex + 1) > playlist.length - 1 ? 0 : playingIndex + 1;
