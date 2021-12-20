@@ -29,7 +29,7 @@ let isDragging = false;
 const loadSongFromPlaylistById = function(id, start = false) {
     playingIndex = id;
     let playing = !song.paused
-    song.src = playlist[playingIndex.url];
+    song.src = playlist[playingIndex].url;
 
     $$(`.playing`).forEach(li => li.classList.remove(`playing`));
     $(`[data-index="${playingIndex}"]`).classList.add(`playing`);
