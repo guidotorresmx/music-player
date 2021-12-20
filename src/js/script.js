@@ -20,6 +20,17 @@ const totalTime = $(`#total-time`)
 let playingIndex = 0;
 const song = new Audio();
 
+
+//function
+const loadSongFromPlaylistById = function(id) {
+    playingIndex = id;
+    let playing = !song.paused
+    song.src = playlist[playingIndex];
+    if (playing)
+        song.play();
+}
+
+//app core
 window.addEventListener(`load`, function() {
     song.src = playlist[playingIndex]
     playlist.forEach(
@@ -40,32 +51,23 @@ window.addEventListener(`load`, function() {
 
     })
 
-})
+    playNext.addEventListener(`click`, function(event) {
+        const nextIndex = (playingIndex + 1) > playlist.length - 1 ? 0 : playingIndex + 1;
+        loadSongFromPlaylistById(nextIndex);
+    })
 
+    playPrev.addEventListener(`click`, function(event) {
+        const nextIndex = (playingIndex - 1) < 0 ? playlist.length - 1 : playingIndex - 1;
+        loadSongFromPlaylistById(nextIndex);
+    })
 
-playNext.addEventListener(`click`, function(event) {
-    const nextIndex = (playingIndex + 1) > playlist.length - 1 ? 0 : playingIndex + 1;
-    loadSongFromPlaylistById(nextIndex);
-})
+    playlistEle.addEventListener(`click`, function(event) {
+        const songToPlay = event.target
+        if (songToPlay.matches(`li`)) {
+            playingIndex = Number(songToPlay.dataset.index)
+            song.src = playlist[playingIndex]
+            song.play()
+        }
+    })
 
-playPrev.addEventListener(`click`, function(event) {
-    const nextIndex = (playingIndex - 1) < 0 ? playlist.length - 1 : playingIndex - 1;
-    loadSongFromPlaylistById(nextIndex);
-})
-
-const loadSongFromPlaylistById = function(id) {
-    playingIndex = id;
-    let playing = !song.paused
-    song.src = playlist[playingIndex];
-    if (playing)
-        song.play();
-}
-
-playlistEle.addEventListener(`click`, function(event) {
-    const songToPlay = event.target
-    if (songToPlay.matches(`li`)) {
-        playingIndex = Number(songToPlay.dataset.index)
-        song.src = playlist[playingIndex]
-        song.play()
-    }
 })
