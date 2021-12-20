@@ -8,7 +8,7 @@ const audioPlayer = $(`.controls`)
 const playOrPause = $(`#btn-play-pause`)
 const playPrev = $(`#skip-prev`)
 const playNext = $(`#skip-next`)
-const playlistEle = $(`.playlist`)
+const playlistEle = $(`.playlist-complete`)
 const remove = $(`#btn-remove`)
 const fav = $(`#btn-fav`)
 
