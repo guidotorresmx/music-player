@@ -1,9 +1,11 @@
+import { $, $$ } from './utils.js'
 import { formatTime } from './utils.js'
+import { playlist } from '../assets/img/music.js'
 
 // Documern elements
 // |---controls
 const audioPlayer = $(`.controls`)
-const play = $(`#play`)
+const play = $(`#btn-play`)
 const pause = $(`#pause`)
 const playPrev = $(`#skip-prev`)
 const playNext = $(`#skip-next`)
@@ -15,15 +17,10 @@ const totalTime = $(`#total-time`)
 
 
 // Script level variables
-const playlist = [
-    "https://www.fesliyanstudios.com/musicfiles/2015-09-25_-_Old_Video_Game_Music_1_-_David_Fesliyan.mp3",
-    "https://www.fesliyanstudios.com/musicfiles/2019-01-10_-_Land_of_8_Bits_-_Stephen_Bennett_-_FesliyanStudios.com.mp3",
-]
+let playingIndex = 0;
+const song = new Audio();
 
-playingIndex = 0
-const song = new Audio()
-
-window.addEventListener(`load`, () => {
+window.addEventListener(`load`, function() {
     song.src = playlist[playingIndex]
     playlist.forEach(
         function(item, index) {
@@ -32,32 +29,42 @@ window.addEventListener(`load`, () => {
         })
 })
 
-play.addEventListener(`clic`, function(event) {
+play.addEventListener(`click`, function(event) {
     song.play()
     pause.classList.remove(`hidden`)
     play.classList.add(`hidden`)
 })
 
-pause.addEventListener(`clic`, function(event) {
-    song.play()
+pause.addEventListener(`click`, function(event) {
+    song.pause()
     play.classList.remove(`hidden`)
     pause.classList.add(`hidden`)
 
 })
 
-playNext.addEventListener(`clic`, function(event) {
+playNext.addEventListener(`click`, function(event) {
     const nextIndex = (playingIndex + 1) > playlist.length - 1 ? 0 : playingIndex + 1;
-    loadSongFromPlaylistbyId(nextIndex);
+    loadSongFromPlaylistById(nextIndex);
 })
 
-playPrev.addEventListener(`clic`, function(event) {
+playPrev.addEventListener(`click`, function(event) {
     const nextIndex = (playingIndex - 1) < 0 ? playlist.length - 1 : playingIndex - 1;
     loadSongFromPlaylistById(nextIndex);
 })
 
-const loadSongFromPlaylistById = (id = 0) => {
-    playingIndex = id
-    song.src = playlist[playingIndex]
-    if (!song.paused)
-        song.play()
+const loadSongFromPlaylistById = function(id) {
+    playingIndex = id;
+    let playing = !song.paused
+    song.src = playlist[playingIndex];
+    if (playing)
+        song.play();
 }
+
+playlistEle.addEventListener(`click`, function(event) {
+    const songToPlay = event.target
+    if (songToPlay.matches(`li`)) {
+        playingIndex = Number(songToPlay.dataset.index)
+        song.src = playlist[playingIndex]
+        song.play()
+    }
+})
