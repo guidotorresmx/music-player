@@ -1,6 +1,6 @@
 import { $, $$ } from './utils.js'
 import { formatTime, shuffleArray } from './utils.js'
-import { playlistMeta } from '../assets/img/music.js'
+import { playlist } from '../assets/img/music.js'
 
 // Documern elements
 // |---controls
@@ -24,13 +24,12 @@ const resetBtn = $(`#btn-playlist-reset`)
 let playingIndex = 0;
 const song = new Audio();
 let isDragging = false;
-let playlist = playlistMeta;
 
 //function
 const loadSongFromPlaylistById = function(id, start = false) {
     playingIndex = id;
     let playing = !song.paused
-    song.src = playlist[playingIndex];
+    song.src = playlist[playingIndex.url];
 
     $$(`.playing`).forEach(li => li.classList.remove(`playing`));
     $(`[data-index="${playingIndex}"]`).classList.add(`playing`);
@@ -43,8 +42,13 @@ const loadPlaylistFromArray = function(playlist) {
     playlist.forEach(
         function(item, index) {
             playlistEle.innerHTML +=
-                `<li class="playlist-element" data-index="${index}">${item.innerHTML}</li>`
+                `<li class="playlist-element" data-index="${index}">${item.songName}
+                        <span class="playlist-artist">${item.artist}</span>
+                        <span class="playlist-genre">${item.genre}</span>
+                        <span class="playlist-song-duration">${item.duration}</span>
+                    </li>`
         })
+
 }
 
 
@@ -60,11 +64,11 @@ window.addEventListener(`load`, function() {
 
     shuffleBtn.addEventListener(`click`, function(event) {
         shuffleArray(playlist);
-        loadSongFromPlaylistById(0, true)
+        loadSongFromPlaylistById(playingIndex, true)
     })
 
     resetBtn.addEventListener(`click`, function(event) {
-
+        song.currentTime = 0;
     })
 
     muteBtn.addEventListener(`click`, function(event) {
