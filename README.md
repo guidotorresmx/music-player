@@ -5,3 +5,5 @@ Media player webapp with some basic features
 style up the playlist element 
 add search bar
 set font styles
+
+decouple script.js

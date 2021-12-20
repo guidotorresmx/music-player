@@ -5,11 +5,12 @@ import { playlist } from '../assets/img/music.js'
 // Documern elements
 // |---controls
 const audioPlayer = $(`.controls`)
-const play = $(`#btn-play`)
-const pause = $(`#pause`)
+const playOrPause = $(`#btn-play-pause`)
 const playPrev = $(`#skip-prev`)
 const playNext = $(`#skip-next`)
 const playlistEle = $(`.playlist`)
+const remove = $(`#btn-remove`)
+const fav = $(`#btn-fav`)
 
 // |---progress
 const currentTime = $(`#progress-time`)
@@ -54,18 +55,32 @@ window.addEventListener(`load`, function() {
     loadPlaylistFromArray(playlist)
     loadSongFromPlaylistById(playingIndex)
 
-    play.addEventListener(`click`, function(event) {
-        song.play()
-        pause.classList.remove(`hidden`)
-        play.classList.add(`hidden`)
+    playOrPause.addEventListener(`click`, function(event) {
+        if (playOrPause.textContent.includes(`play`)) {
+            playOrPause.innerHTML = `<span id="pause" class="material-icons">pause</span>`;
+            song.play()
+        } else {
+            playOrPause.innerHTML = `<span id="play" class="material-icons">play_arrow</span>`;
+            song.pause()
+        }
     })
 
-    pause.addEventListener(`click`, function(event) {
-        song.pause()
-        play.classList.remove(`hidden`)
-        pause.classList.add(`hidden`)
-
+    remove.addEventListener(`click`, function(event) {
+        if (!remove.textContent.includes(`outline`)) {
+            remove.innerHTML = `<span id="remove" class="material-icons">remove_circle_outline</span>`;
+        } else {
+            remove.innerHTML = `<span id="remove" class="material-icons">remove_circle</span>`;
+        }
     })
+
+    fav.addEventListener(`click`, function(event) {
+        if (fav.textContent.includes(`border`)) {
+            fav.innerHTML = `<span id="fav" class="material-icons">favorite</span>`;
+        } else {
+            fav.innerHTML = `<span id="fav" class="material-icons">favorite_border</span>`;
+        }
+    })
+
 
     playNext.addEventListener(`click`, function(event) {
         const nextIndex = (playingIndex + 1) > playlist.length - 1 ? 0 : playingIndex + 1;
