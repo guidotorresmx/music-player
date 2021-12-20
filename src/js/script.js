@@ -1,6 +1,6 @@
 import { $, $$ } from './utils.js'
-import { formatTime } from './utils.js'
-import { playlist } from '../assets/img/music.js'
+import { formatTime, shuffleArray } from './utils.js'
+import { playlistMeta } from '../assets/img/music.js'
 
 // Documern elements
 // |---controls
@@ -24,7 +24,7 @@ const resetBtn = $(`#btn-playlist-reset`)
 let playingIndex = 0;
 const song = new Audio();
 let isDragging = false;
-
+let playlist = playlistMeta;
 
 //function
 const loadSongFromPlaylistById = function(id, start = false) {
@@ -57,6 +57,15 @@ window.addEventListener(`load`, function() {
 
     loadPlaylistFromArray(playlist)
     loadSongFromPlaylistById(playingIndex)
+
+    shuffleBtn.addEventListener(`click`, function(event) {
+        shuffleArray(playlist);
+        loadSongFromPlaylistById(0, true)
+    })
+
+    resetBtn.addEventListener(`click`, function(event) {
+
+    })
 
     muteBtn.addEventListener(`click`, function(event) {
         if (muteBtn.textContent.includes(`volume_up`)) {
