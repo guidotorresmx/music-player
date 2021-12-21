@@ -23,11 +23,11 @@ All further work to the project is welcome and encouraged, but recommended work 
 kindly report any issues to the [github repository issues of this project](https://github.com/guidotorresmx/music-player)
 
 ## TODO:
-[] style up the playlist element 
-[] add search bar
-[] set font styles
-[] add alt text to graphic elements
-[] decouple script.js
-[] add a licence to the project (MIT?)
-[] add unit and integration test
-[] create drop down menu and profiles and add actual functionality
+[ ] style up the playlist element 
+[ ] add search bar
+[ ] set font styles
+[ ] add alt text to graphic elements
+[ ] decouple script.js
+[ ] add a licence to the project (MIT?)
+[ ] add unit and integration test
+[ ] create drop down menu and profiles and add actual functionality
