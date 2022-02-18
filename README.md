@@ -1,6 +1,9 @@
 # music-player
 ## intro
-This is a music player app embedded into a static site, it contains most of the basic functionalities as well as a responsive interface
+This is a music player app embedded into a static website, it contains most of the basic functionalities as well as a responsive interface. And it posts feedback from people's favourite songs to us by clicking fav when reproducing a song.
+
+After a month of usage the site will go down and votes from people will be shown instead for the rest of the year.
+
 __for a better experience, please try with a narrow screen__
 
 ## basics
