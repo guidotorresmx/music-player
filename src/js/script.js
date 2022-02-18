@@ -12,6 +12,8 @@ const playlistEle = $(`.playlist-complete`)
 const remove = $(`#btn-remove`)
 const fav = $(`#btn-fav`)
 const songEle = $(`#song`)
+const favSongEle = $(`#fav-song`)
+
 // |---progress
 const currentTime = $(`#progress-time`)
 const totalTime = $(`#total-time`)
@@ -33,7 +35,9 @@ const loadSongFromPlaylistById = function(id, start = false) {
     playingIndex = id;
     let playing = !song.paused
     song.src = playlist[playingIndex].url;
+
     songEle.innerHTML = `<span class="song-name">${playlist[playingIndex].songName}</span>`
+    favSongEle.value = `${playlist[playingIndex].songName}`
 
     $$(`.playing`).forEach(li => li.classList.remove(`playing`));
     $(`[data-index="${playingIndex}"]`).classList.add(`playing`);
