@@ -19,6 +19,9 @@ const progressBar = $(`#progress-bar`)
 const muteBtn = $(`#btn-mute`)
 const shuffleBtn = $(`#btn-shuffle`)
 const resetBtn = $(`#btn-playlist-reset`)
+const checkbox = $$("input[name=checkbox]");
+
+
 
 // Script level variables
 let playingIndex = 0;
